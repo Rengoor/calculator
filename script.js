@@ -29,3 +29,18 @@ function operate(operator, num1, num2) {
         divide(num1, num2);
     }
 }
+
+
+// Buttons that populate the display
+let displayValue = document.querySelector('.display');
+
+const handleClick = function (e) {
+    displayValue.textContent = e.target.textContent;
+};
+
+const buttons = document.querySelectorAll('.button');
+
+buttons.forEach((button) => {
+    button.addEventListener('click', handleClick);
+});
+
