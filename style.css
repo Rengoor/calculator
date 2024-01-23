@@ -1,0 +1,66 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px; 
+    background-color: black;
+    padding: 20px;
+    border-radius: 10px; 
+}
+
+.display {
+    background-color: grey;
+    width: 150px; 
+    height: 60px; 
+    border-radius: 10px;
+}
+
+.calculator {
+    display: flex;
+    gap: 10px; 
+}
+
+.operator-keys {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; 
+}
+
+.num-pad {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.row {
+    display: flex;
+    gap: 10px;
+}
+
+.button, .operator {
+    flex: 1;
+    color: azure;
+    border-radius: 10px;
+    border: 0;
+    font-size: 20px;
+}
+
+.button {
+    background-color: rgba(51, 136, 255, 0.897);
+}
+
+.operator {
+    background-color: red;
+}
