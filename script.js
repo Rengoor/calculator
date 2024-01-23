@@ -62,6 +62,15 @@ buttons.forEach((button) => {
 });
 operators.forEach((singleOperator) => {
     singleOperator.addEventListener('click', (e) => {
+        // If operator is already defined, calculate and display the result
+        if (operator && secondNum !== undefined) {
+            let result = operate(operator, parseFloat(firstNum), parseFloat(secondNum));
+            display.textContent = result;
+            firstNum = result;
+            secondNum = undefined;
+        }
+        
+        // Update the operator for the next calculation
         operator = e.target.textContent;
         console.log(operator);
     });
