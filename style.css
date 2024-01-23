@@ -51,7 +51,8 @@ body {
 }
 
 .button,
-.operator {
+.operator,
+.equals {
 	flex: 1;
 	color: azure;
 	border-radius: 10px;
@@ -63,6 +64,7 @@ body {
 	background-color: rgba(51, 136, 255, 0.897);
 }
 
-.operator {
+.operator,
+.equals {
 	background-color: red;
 }
