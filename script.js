@@ -20,23 +20,25 @@ let secondNum;
 // Operate function
 function operate(operator, num1, num2) {
     if (operator === '+') {
-        add(num1, num2);
+        return add(num1, num2);
     } else if (operator === '-') {
-        subtract(num1, num2);
+        return subtract(num1, num2);
     } else if (operator === '*') {
-        multiply(num1, num2);
+        return multiply(num1, num2);
     } else if (operator === '/') {
-        divide(num1, num2);
+        return divide(num1, num2);
     }
 }
 
 
+
 // Buttons that populate the display
 let display = document.querySelector('.display');
+let displayValue;
 
 const handleClick = function (e) {
     display.textContent = e.target.textContent;
-    let displayValue = display.textContent;
+    displayValue = display.textContent;
     
     if (typeof firstNum === 'undefined') {
         firstNum = displayValue;
@@ -49,6 +51,7 @@ const handleClick = function (e) {
 
 const buttons = document.querySelectorAll('.button');
 const operators = document.querySelectorAll('.operator');
+const equals = document.querySelector('.equals');
 
 buttons.forEach((button) => {
     button.addEventListener('click', handleClick);
@@ -59,3 +62,12 @@ operators.forEach((singleOperator) => {
         console.log(operator);
     });
 });
+equals.addEventListener('click', () => {
+    if (secondNum !== undefined) {
+        let result = operate(operator, parseFloat(firstNum), parseFloat(secondNum));
+        console.log(result)
+        display.textContent = result;
+        firstNum = display.textContent;
+    }
+});
+
