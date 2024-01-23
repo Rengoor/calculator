@@ -32,15 +32,30 @@ function operate(operator, num1, num2) {
 
 
 // Buttons that populate the display
-let displayValue = document.querySelector('.display');
+let display = document.querySelector('.display');
 
 const handleClick = function (e) {
-    displayValue.textContent = e.target.textContent;
+    display.textContent = e.target.textContent;
+    let displayValue = display.textContent;
+    
+    if (typeof firstNum === 'undefined') {
+        firstNum = displayValue;
+        console.log("first: " + firstNum);
+    } else {
+        secondNum = displayValue;
+        console.log("second: " + secondNum);
+    }
 };
 
 const buttons = document.querySelectorAll('.button');
+const operators = document.querySelectorAll('.operator');
 
 buttons.forEach((button) => {
     button.addEventListener('click', handleClick);
 });
-
+operators.forEach((singleOperator) => {
+    singleOperator.addEventListener('click', (e) => {
+        operator = e.target.textContent;
+        console.log(operator);
+    });
+});
