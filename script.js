@@ -37,14 +37,17 @@ let display = document.querySelector('.display');
 let displayValue;
 
 const handleClick = function (e) {
-    display.textContent = e.target.textContent;
-    displayValue = display.textContent;
-    
-    if (typeof firstNum === 'undefined') {
-        firstNum = displayValue;
+    const digit = e.target.textContent;
+
+    // If no operator is selected, update firstNum
+    if (typeof firstNum === 'undefined' || operator === undefined) {
+        firstNum = firstNum === undefined ? digit : firstNum + digit;
+        display.textContent = firstNum;
         console.log("first: " + firstNum);
     } else {
-        secondNum = displayValue;
+        // If an operator is selected, update secondNum
+        secondNum = secondNum === undefined ? digit : secondNum + digit;
+        display.textContent = secondNum;
         console.log("second: " + secondNum);
     }
 };
@@ -68,6 +71,7 @@ equals.addEventListener('click', () => {
         console.log(result)
         display.textContent = result;
         firstNum = display.textContent;
+        secondNum = undefined;
     }
 });
 
