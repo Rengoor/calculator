@@ -55,6 +55,7 @@ const handleClick = function (e) {
 const buttons = document.querySelectorAll('.button');
 const operators = document.querySelectorAll('.operator');
 const equals = document.querySelector('.equals');
+const clear = document.querySelector('.clear');
 
 buttons.forEach((button) => {
     button.addEventListener('click', handleClick);
@@ -73,5 +74,10 @@ equals.addEventListener('click', () => {
         firstNum = display.textContent;
         secondNum = undefined;
     }
+});
+clear.addEventListener('click', () => {
+    display.textContent = undefined;
+    firstNum = undefined;
+    secondNum = undefined;
 });
 
