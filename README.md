@@ -1,5 +1,6 @@
 # calculator
 Odin Project's Calculator Project
+UI Design inspired by MDBootstrap
 
 The entire project is divided into three stages:
 1. Simple, one digit calculations.
@@ -17,4 +18,4 @@ Prevention of potential bugs:
     This was when I learned the most. I improved my debugging skills and for the very first time, I was continously asking for help which I found myself improving in by asking the right questions and providing the right information. Any potential bug fix would lead to new tools of thought processes being unlocked which I will use to solve future problems.
 
 Style and design of the calculator:
-    This task was simple but the branching and version control skills taught here were immensely underrated.
+    This task was simple but the branching version control skills and bootstrap skills taught here were immensely underrated. Using ui inspiration from mdbootstrap.com, I completed this ui and refine my css skills. 
