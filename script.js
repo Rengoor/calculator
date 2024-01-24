@@ -17,12 +17,6 @@ function divide(num1, num2) {
     }
 }
 
-// Variables
-let firstNum;
-let operator;
-let secondNum;
-
-// Operate function
 function operate(operator, num1, num2) {
     if (operator === '+') {
         return add(num1, num2);
@@ -36,10 +30,16 @@ function operate(operator, num1, num2) {
 }
 
 
-
-// Buttons that populate the display
-let display = document.querySelector('.display');
-let displayValue;
+// Query selectors and variables
+let firstNum;
+let operator;
+let secondNum;
+const display = document.querySelector('.display');
+const buttons = document.querySelectorAll('.button');
+const operators = document.querySelectorAll('.operator');
+const equals = document.querySelector('.equals');
+const clear = document.querySelector('.clear');
+const backspace = document.querySelector('.backspace');
 
 const handleClick = function (e) {
     const digit = e.target.textContent;
@@ -64,12 +64,6 @@ const handleClick = function (e) {
         console.log("second: " + secondNum);
     }
 };
-
-const buttons = document.querySelectorAll('.button');
-const operators = document.querySelectorAll('.operator');
-const equals = document.querySelector('.equals');
-const clear = document.querySelector('.clear');
-const backspace = document.querySelector('.backspace');
 
 buttons.forEach((button) => {
     button.addEventListener('click', handleClick);
