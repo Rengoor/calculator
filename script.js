@@ -40,6 +40,7 @@ const operators = document.querySelectorAll('.operator');
 const equals = document.querySelector('.equals');
 const clear = document.querySelector('.clear');
 const backspace = document.querySelector('.backspace');
+display.textContent = '0';
 
 const handleClick = function (e) {
     const digit = e.target.textContent;
@@ -93,7 +94,7 @@ equals.addEventListener('click', () => {
     }
 });
 clear.addEventListener('click', () => {
-    display.textContent = undefined;
+    display.textContent = '0';
     firstNum = undefined;
     secondNum = undefined;
     operator = undefined;
