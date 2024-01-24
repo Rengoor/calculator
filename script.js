@@ -9,7 +9,12 @@ function multiply(num1, num2) {
     return num1 * num2;
 }
 function divide(num1, num2) {
-    return num1 / num2;
+    let result = num1 / num2;
+    if (result === Infinity) {
+        return "Thought you were cheeky huh?";
+    } else {
+        return result;
+    }
 }
 
 // Variables
@@ -56,6 +61,7 @@ const buttons = document.querySelectorAll('.button');
 const operators = document.querySelectorAll('.operator');
 const equals = document.querySelector('.equals');
 const clear = document.querySelector('.clear');
+const backspace = document.querySelector('.backspace');
 
 buttons.forEach((button) => {
     button.addEventListener('click', handleClick);
@@ -89,4 +95,15 @@ clear.addEventListener('click', () => {
     firstNum = undefined;
     secondNum = undefined;
 });
-
+backspace.addEventListener('click', () => {
+    // Determine which number to backspace based on the operator
+    if (operator === undefined || secondNum === undefined) {
+        // Backspace from the firstNum
+        firstNum = firstNum.slice(0, -1);
+        display.textContent = firstNum;
+    } else {
+        // Backspace from the secondNum
+        secondNum = secondNum.slice(0, -1);
+        display.textContent = secondNum;
+    }
+});
