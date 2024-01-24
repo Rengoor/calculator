@@ -79,7 +79,7 @@ operators.forEach((singleOperator) => {
         }
         
         // Update the operator for the next calculation
-        operator = e.target.textContent;
+        operator = e.target.getAttribute('value');
         console.log(operator);
     });
 });
