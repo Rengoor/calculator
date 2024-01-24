@@ -46,11 +46,19 @@ const handleClick = function (e) {
 
     // If no operator is selected, update firstNum
     if (typeof firstNum === 'undefined' || operator === undefined) {
+        if (digit === '.' && firstNum && firstNum.includes('.')) {
+            // Prevent adding multiple decimal points to the same number
+            return;
+        }
         firstNum = firstNum === undefined ? digit : firstNum + digit;
         display.textContent = firstNum;
         console.log("first: " + firstNum);
     } else {
         // If an operator is selected, update secondNum
+        if (digit === '.' && secondNum && secondNum.includes('.')) {
+            // Prevent adding multiple decimal points to the same number
+            return;
+        }
         secondNum = secondNum === undefined ? digit : secondNum + digit;
         display.textContent = secondNum;
         console.log("second: " + secondNum);
@@ -94,6 +102,7 @@ clear.addEventListener('click', () => {
     display.textContent = undefined;
     firstNum = undefined;
     secondNum = undefined;
+    operator = undefined;
 });
 backspace.addEventListener('click', () => {
     // Determine which number to backspace based on the operator
