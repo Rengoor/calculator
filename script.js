@@ -105,6 +105,9 @@ clear.addEventListener('click', () => {
     operator = undefined;
 });
 backspace.addEventListener('click', () => {
+    if (display.textContent === '') {
+        return;
+    }
     // Determine which number to backspace based on the operator
     if (operator === undefined || secondNum === undefined) {
         // Backspace from the firstNum
